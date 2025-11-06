@@ -283,3 +283,121 @@ footer {
   font-size: 0.9em;
   margin-top: 40px;
 }
+
+/* =====================================================
+   📱 Responsive Layout (Mobile & Tablet)
+===================================================== */
+
+/* Untuk layar di bawah 1024px (tablet landscape) */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 10px 25px;
+  }
+
+  .navbar ul {
+    gap: 15px;
+  }
+
+  .card1 .text {
+    padding: 30px;
+  }
+}
+
+/* Untuk layar di bawah 768px (tablet & HP besar) */
+@media (max-width: 768px) {
+  .hero1 {
+    height: 250px;
+    font-size: 0.9em;
+  }
+
+  .hero1 h1 {
+    font-size: 2em;
+  }
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 15px;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .card1 {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .card1 img {
+    width: 100%;
+    height: 250px;
+  }
+
+  .card1 .text {
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+  }
+
+  .card1 .btn {
+    margin-top: 10px;
+  }
+
+  .arrow {
+    font-size: 1.5em;
+    padding: 6px 10px;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+}
+
+/* Untuk layar di bawah 480px (HP kecil) */
+@media (max-width: 480px) {
+  .hero1 {
+    height: 200px;
+  }
+
+  .hero1 h1 {
+    font-size: 1.6em;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card1 img {
+    height: 200px;
+  }
+
+  .card1 .text h3 {
+    font-size: 1.3em;
+  }
+
+  .card1 .text p {
+    font-size: 0.95em;
+  }
+
+  .btn {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+
+  footer {
+    font-size: 0.8em;
+  }
+}
