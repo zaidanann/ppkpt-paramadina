@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATGAS PPKPT - Universitas Paramadina</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+    <div class="logo">
+        <img src="public/img/LOGO_logo 2.2.png" alt="Logo" class="logo-image">
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="#tentang">TENTANG KAMI</a></li>
+            <li><a href="/publikasi.html">PUBLIKASI</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Pengaduan Tindakan Kekerasan</h1>
+        </div>
+
+        <form id="pengaduanForm">
+
+            <!-- Identitas Pelapor -->
+            <div class="form-section">
+                <h2 class="section-title">Identitas Pelapor</h2>
+
+                <div class="form-group">
+                    <label>Nama Pelapor <span class="required">*</span></label>
+                    <input type="text" name="namaPelapor" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Status Pelapor <span class="required">*</span></label>
+                    <select name="statusPelapor" required>
+                        <option value="">Pilih Status</option>
+                        <option value="mahasiswa">Mahasiswa</option>
+                        <option value="tenaga-pendidik">Tenaga Pendidik</option>
+                        <option value="dosen">Dosen</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Status Pelapor <span class="required">*</span></label>
+                    <select name="statusPelapor2" required>
+                        <option value="">Pilih Status</option>
+                        <option value="saksi">Saksi</option>
+                        <option value="korban">Korban</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Nomor Telepon/ (e-mail) Pelapor <span class="required">*</span></label>
+                    <input type="text" name="kontakPelapor" required>
+                </div>
+            </div>
+
+            <!-- Identitas Terlapor -->
+            <div class="form-section">
+                <h2 class="section-title">Identitas Terlapor</h2>
+
+                <div class="form-group">
+                    <label>Nama Terlapor <span class="required">*</span></label>
+                    <input type="text" name="namaTerlapor" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Status Terlapor <span class="required">*</span></label>
+                    <select name="statusTerlapor" required>
+                        <option value="">Pilih Status</option>
+                        <option value="mahasiswa">Mahasiswa</option>
+                        <option value="tenaga-pendidik">Tenaga Pendidik</option>
+                        <option value="dosen">Dosen</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
+                    <div class="hint">(Mahasiswa/Tenaga Pendidik/Dosen/Lainnya)</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Nomor Telepon/ (e-mail) Terlapor</label>
+                    <input type="text" name="kontakTerlapor">
+                </div>
+
+                <div class="form-group">
+                    <label>Ciri Lengkap Terlapor <span class="required">*</span></label>
+                    <textarea name="ciriTerlapor" required></textarea>
+                </div>
+            </div>
+
+            <!-- Peristiwa Kejadian -->
+            <div class="form-section">
+                <h2 class="section-title">Peristiwa Kejadian</h2>
+
+                <div class="form-group">
+                    <label>Deskripsi Kronologi <span class="required">*</span></label>
+                    <textarea name="kronologi" required></textarea>
+                    <div class="hint">(Cerita Singkat, Tanggal Kejadian, Lokasi, Detail Peristiwa)</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Bentuk Kekerasan <span class="required">*</span></label>
+                    <select name="bentukKekerasan" required>
+                        <option value="">Pilih Bentuk Kekerasan</option>
+                        <option value="verbal">Kekerasan Verbal</option>
+                        <option value="fisik">Kekerasan Fisik</option>
+                        <option value="psikis">Kekerasan Psikis</option>
+                        <option value="seksual">Kekerasan Seksual</option>
+                        <option value="perundungan">Perundungan/Bullying</option>
+                        <option value="diskriminasi">Diskriminasi</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Apakah Korban Setuju Untuk Diproses? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="setuju" name="persetujuan" value="setuju" required>
+                            <label for="setuju">Setuju</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="tidakSetuju" name="persetujuan" value="tidak-setuju">
+                            <label for="tidakSetuju">Tidak Setuju</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Unggah Dokumen Bukti <span class="required">*</span></label>
+                    <input type="file" id="fileUpload" name="dokumenBukti" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required>
+                    <button type="button" class="upload-btn" onclick="document.getElementById('fileUpload').click()">
+                        📎 Tambah Dokumen
+                    </button>
+                    <div class="file-name" id="fileName"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Identifikasi Kebutuhan Korban <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="psikologis" name="kebutuhan[]" value="psikologis">
+                            <label for="psikologis">Konseling Psikologis</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hukum" name="kebutuhan[]" value="hukum">
+                            <label for="hukum">Bantuan Hukum</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="medis" name="kebutuhan[]" value="medis">
+                            <label for="medis">Bantuan Medis</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="internal" name="kebutuhan[]" value="internal">
+                            <label for="internal">Mediasi Internal</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Kirim ➜</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('fileUpload').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : '';
+            document.getElementById('fileName').textContent = fileName ? `File terpilih: ${fileName}` : '';
+        });
+
+        document.getElementById('pengaduanForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const checkboxes = document.querySelectorAll('input[name="kebutuhan[]"]:checked');
+            if (checkboxes.length === 0) {
+                alert('Mohon pilih minimal satu kebutuhan korban');
+                return;
+            }
+
+            alert('Pengaduan berhasil dikirim!\n\nTerima kasih atas laporan Anda.');
+        });
+    </script>
+</body>
+</html>
